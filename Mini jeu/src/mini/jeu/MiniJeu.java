@@ -8,7 +8,7 @@ package mini.jeu;
  *
  * @author jeann
  */
-public class MiniJeu {
+public class MiniJeu { // Speed clic 
 
     /**
      * @param args the command line arguments
