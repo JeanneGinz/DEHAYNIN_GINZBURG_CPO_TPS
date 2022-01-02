@@ -15,7 +15,13 @@ public class Bouton {
         Couleur = "blanc" ;
         boutonAlume = false;
     }
-    
-    
-    
+    public void EteindreLeBouton() {
+        boutonAlume=false;
+    }
+    public void AllumerLeBouton() {
+        boutonAlume=true;
+    }
+    public void couleurDuBouton(String typeDuBouton) {
+        Couleur=typeDuBouton;
+    }
 }
