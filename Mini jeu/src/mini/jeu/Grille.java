@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package mini.jeu;
-
+import java.util.Random;
 /**
  *
  * @author Jade
@@ -19,5 +19,16 @@ public class Grille {
             }
             
         }
+    }
+    
+    public void BoutonAleatoirementAllume(){
+        Random random = new Random();
+        int nbColonne;
+        int nbLigne;
+        nbColonne = random.nextInt(5);
+        nbLigne=random.nextInt(5);
+        GrillePartie[nbColonne][nbLigne].AllumerLeBouton();
+        GrillePartie[nbColonne][nbLigne].couleurDuBouton("coronavirus");
+        
     }
 }
