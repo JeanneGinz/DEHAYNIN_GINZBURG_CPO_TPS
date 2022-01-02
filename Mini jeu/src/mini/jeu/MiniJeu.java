@@ -24,9 +24,9 @@ public class MiniJeu { // Speed clic
         frame1.setPreferredSize(new Dimension(800,600));
         frame1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-        ImageIcon corona_virus = new ImageIcon("./images/corona_virus.png");
-        JLabel jlabel1 =new JLabel(corona_virus);
-        jlabel1.setBorder(BorderFactory.createTitledBorder("corona_virus"));
+       ImageIcon coronavirus = new ImageIcon("./images/coronavirus.png");
+        JLabel jlabel1 =new JLabel(coronavirus);
+        jlabel1.setBorder(BorderFactory.createTitledBorder("coronavirus"));
        // frame1.add(jlabel1);
         
         frame1.pack();
