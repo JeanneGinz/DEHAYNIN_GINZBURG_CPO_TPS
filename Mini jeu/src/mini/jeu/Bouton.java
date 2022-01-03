@@ -11,17 +11,17 @@ package mini.jeu;
 
     public class Bouton {
     String Couleur ;
-    boolean boutonAlume ;
+    boolean boutonAllume ;
     
     public Bouton(){
         Couleur = "blanc" ;
-        boutonAlume = false;
+        boutonAllume = false;
     }
     public void EteindreLeBouton() {
-        boutonAlume=false;
+        boutonAllume=false;
     }
     public void AllumerLeBouton() {
-        boutonAlume=true;
+        boutonAllume=true;
     }
     public void couleurDuBouton(String typeDuBouton) {
         Couleur=typeDuBouton;

@@ -15,7 +15,7 @@ public class Grille {
         for (int i=0;i<6;i++){ // on reprend celle de notre puissance 4 
             for (int j=0;j<6;j++){
                 GrillePartie[i][j]=new Bouton();
-                GrillePartie[i][j].boutonAlume=false; // avec en plus on initialise nos bouton en mode eteint
+                GrillePartie[i][j].boutonAllume=false; // avec en plus on initialise nos bouton en mode eteint
             }
             
         }
@@ -58,5 +58,10 @@ public class Grille {
         
     }
 }
-    
+    public void CliquerPourEteindre(int colonne, int ligne) {
+         if (GrillePartie[colonne][ligne].boutonAllume == true ) { 
+        GrillePartie[colonne][ligne].EteindreLeBouton(); 
+        }
+    }   
+    }
 }
