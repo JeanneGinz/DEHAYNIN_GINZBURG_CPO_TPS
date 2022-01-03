@@ -30,5 +30,33 @@ public class Grille {
         GrillePartie[nbColonne][nbLigne].AllumerLeBouton();
         GrillePartie[nbColonne][nbLigne].couleurDuBouton("coronavirus");
         
+        int piege;
+        piege=random.nextInt(2);
+        if (piege == 1) {
+        int x = random.nextInt(6);
+        int y = random.nextInt(6);
+        while (GrillePartie[nbColonne][nbLigne] == GrillePartie[x][y]) { // on vérifie que notre masque ne soit pas sur notre covid
+              x = random.nextInt(6); 
+              y = random.nextInt(6);
+            }
+            GrillePartie[x][y].AllumerLeBouton();
+            GrillePartie[x][y].couleurDuBouton("masque");
+        
     }
+
+    int booster;
+    booster=random.nextInt(5);
+    if(booster==3){
+        int x = random.nextInt(6);
+        int y = random.nextInt(6);
+        while (GrillePartie[nbColonne][nbLigne] == GrillePartie[x][y]) { // on vérifie que notre masque ne soit pas sur notre covid
+              x = random.nextInt(6); 
+              y = random.nextInt(6);
+            }
+            GrillePartie[x][y].AllumerLeBouton();
+            GrillePartie[x][y].couleurDuBouton("delta");
+        
+    }
+}
+    
 }
