@@ -68,6 +68,19 @@ public class Grille {
         }
     } 
     
-    void 
+    void AfficherGrille(){ // On reprend la meme methode que notre puissance 4 avec des petites modifs
+        for (int i=0; i<6; i++) {
+            for (int j=0; j<6; j++) {
+                if(GrillePartie[i][j].boutonAllume == false){
+                    System.out.print(" A "); // pour Allumé
+                }
+                else if (GrillePartie[i][j].boutonAllume == true) {
+                    System.out.print(" E "); //pour eteint
+        }
     }
+        }
+    }
+}
+
+    
 
