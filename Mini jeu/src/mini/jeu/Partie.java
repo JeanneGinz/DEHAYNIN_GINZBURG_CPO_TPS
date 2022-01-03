@@ -29,6 +29,7 @@ public class Partie {
     public void DebuterPartie() throws InterruptedException{
         Scanner sca = new Scanner(System.in);
         System.out.println("Entrez le nom du joueur ");
+        Joueur1 = sca.next();
         
         InitialiserPartie();
        
