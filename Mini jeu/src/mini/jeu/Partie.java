@@ -38,7 +38,7 @@ public class Partie {
         long t= System.currentTimeMillis();
         long end = t+30000;
         while(System.currentTimeMillis() < end) {
-            GrilleJeu.BoutonAleatoirementAllume(); 
+            GrilleJeu.BoutonAleatoirementAllume();
             GrilleJeu.AfficherGrille();
             Scanner sc = new Scanner(System.in); 
             System.out.println("saisissez la ligne entre 1 et 6");
