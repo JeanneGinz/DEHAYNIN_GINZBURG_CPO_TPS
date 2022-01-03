@@ -6,6 +6,8 @@ package mini.jeu;
 
 import java.util.Scanner;
 import java.util.Timer;
+import java.io.*;
+import java.lang.Thread;
 
 /**
  *
@@ -24,7 +26,7 @@ public class Partie {
         Grille GrilleJeu = new Grille();
     }
     
-    public void DebuterPartie(){
+    public void DebuterPartie() throws InterruptedException{
         Scanner sca = new Scanner(System.in);
         System.out.println("Entrez le nom du joueur ");
         
@@ -45,7 +47,7 @@ public class Partie {
             GrilleJeu.CliquerPourEteindre(a,b);
         
   
-               // Thread.sleep( xxx );
+                Thread.sleep(30000);
         
     }
     
