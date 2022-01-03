@@ -4,6 +4,7 @@
  */
 package mini.jeu;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Image;
@@ -12,10 +13,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
 
 /**
  *
- * @author jeann
+ * @author jeann 
  */
 public class MiniJeu { // Speed clic 
 
@@ -24,9 +27,31 @@ public class MiniJeu { // Speed clic
      */
     
     
+    public static void main (String[] args){
+        
+        JFrame cadreBienvenue = JFrame("Speed click "); //ou Rejoins notre équipe afin d'éiliminer le Coronavirus 
+        cadreBienvenue.setPreferredSize(new Dimension (800,600));
+        cadreBienvenue.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        JLayeredPane panneau = new JLayeredPane();
+        cadreBienvenue.add(panneau);
+        
+        //ImageIcon pageBienvenue = new ImageIcon ("./images/pageBienvenue.png ");
+        
+        JPanel arriereplan= new JPanel();
+        arriereplan.setBorder(BorderFactory.createTitledBorder("arriere plan"));
+        arriereplan.setBackground(Color.red);
+        cadreBienvenue.add(arriereplan);
+        
+        arriereplan.pack();
+        arriereplan.setVisible(true);
     
-    public static ImageIcon DimensionImage(String cheminImage, int largeur , int hauteur ){
-        ImageIcon srcIcon = new ImageIcon(cheminImage); // on cherche  l'image enregistré 
+
+   
+    
+    
+    /* public static ImageIcon DimensionImage(String cheminImage, int largeur , int hauteur ){
+       ImageIcon srcIcon = new ImageIcon(cheminImage); // on cherche  l'image enregistré 
         Image srcImage= srcIcon.getImage(); // extraction des données d'image 2D
         Image resizedImage= srcImage.getScaledInstance(largeur, hauteur, Image.SCALE_SMOOTH);
         
@@ -70,7 +95,9 @@ public class MiniJeu { // Speed clic
         
         
     }
-    }
+    }*/
 
-   
-     
+   } 
+    
+  
+}
