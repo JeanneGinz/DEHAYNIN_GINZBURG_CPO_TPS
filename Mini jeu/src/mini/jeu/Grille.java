@@ -78,6 +78,7 @@ public class Grille {
                     System.out.print(" E "); //pour eteint
         }
     }
+             System.out.println(); 
         }
     }
    // public int 

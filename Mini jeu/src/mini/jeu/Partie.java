@@ -35,9 +35,9 @@ public class Partie {
        
         GrilleJeu.AfficherGrille();
         System.out.println("La partie va débuter");
-        long t= System.currentTimeMillis();
-        long end = t+30000;
-        while(System.currentTimeMillis() < end) {
+        //long t= System.currentTimeMillis();
+        //long end = t+30000;
+        while(tour < 4) {
             GrilleJeu.BoutonAleatoirementAllume();
             GrilleJeu.AfficherGrille();
             Scanner sc = new Scanner(System.in); 
@@ -46,9 +46,10 @@ public class Partie {
             System.out.println("saisissez la colonne entre 1 et 6");
             int b = sc.nextInt() -1;
             GrilleJeu.CliquerPourEteindre(a,b);
+            tour++;
         
   
-                Thread.sleep(30000);
+                //Thread.sleep(30000);
         
     }
     
