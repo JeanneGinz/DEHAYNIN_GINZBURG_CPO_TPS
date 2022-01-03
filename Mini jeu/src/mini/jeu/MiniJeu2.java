@@ -4,26 +4,22 @@
  */
 package mini.jeu;
 
-
 /**
  *
- * @author jeann 
+ * @author jeann
  */
-public class MiniJeu { // Speed clic 
+public class MiniJeu2 {
 
     /**
      * @param args the command line arguments
      */
-    
-    
-    public static void main (String[] args) throws InterruptedException{
-      
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
         //partie1.initialiserPartie();
         Partie partie1 = new Partie();
         partie1.DebuterPartie();
         
             }
-}
-
-        
-        
+    }
+    
