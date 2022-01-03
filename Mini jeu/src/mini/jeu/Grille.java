@@ -57,11 +57,17 @@ public class Grille {
             GrillePartie[x][y].couleurDuBouton("delta");
         
     }
-}
+    }
+    public boolean verificationBoutonClique(int colonne, int ligne) {
+        return GrillePartie[colonne][ligne].boutonAllume;
+    }
+
     public void CliquerPourEteindre(int colonne, int ligne) {
          if (GrillePartie[colonne][ligne].boutonAllume == true ) { 
         GrillePartie[colonne][ligne].EteindreLeBouton(); 
         }
-    }   
+    } 
+    
+    void 
     }
-}
+
