@@ -13,7 +13,7 @@ import java.util.Timer;
  */
 public class Partie {
     String Joueur1;
-    Grille GrillePartie;
+    Grille GrilleJeu;
     Timer chrono = new Timer();
     int tour=0;
     
@@ -21,13 +21,34 @@ public class Partie {
         tour=0;
     }
     public void InitialiserPartie(){
-        Grille GrilleBouton = new Grille();
+        Grille GrilleJeu = new Grille();
     }
     
     public void DebuterPartie(){
         Scanner sca = new Scanner(System.in);
         System.out.println("Entrez le nom du joueur ");
+        
+        InitialiserPartie();
+       
+        GrilleJeu.AfficherGrille();
+        System.out.println("La partie va débuter");
+        long t= System.currentTimeMillis();
+        long end = t+30000;
+        while(System.currentTimeMillis() < end) {
+            GrilleJeu.BoutonAleatoirementAllume(); 
+            GrilleJeu.AfficherGrille();
+            Scanner sc = new Scanner(System.in); 
+            System.out.println("saisissez la ligne entre 1 et 6");
+            int a = sc.nextInt() -1;
+            System.out.println("saisissez la colonne entre 1 et 6");
+            int b = sc.nextInt() -1;
+            GrilleJeu.CliquerPourEteindre(a,b);
+        
+  
+               // Thread.sleep( xxx );
+        
     }
     
     
+}
 }
