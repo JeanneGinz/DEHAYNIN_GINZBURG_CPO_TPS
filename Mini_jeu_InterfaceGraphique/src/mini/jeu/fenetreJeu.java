@@ -28,9 +28,9 @@ public class fenetreJeu extends javax.swing.JFrame {
         // début de la partie
         panneauinfopartie.setVisible(false);
 
-        for (int i = 4; i >= 0; i++) { // crée 36 cellules graphiques
+        for (int i = 5; i >= 0; i--) { // crée 36 cellules graphiques
             for (int j = 0; j < 6; j++) {
-                BoutonGraphique boutgraph = new BoutonGraphique();
+                BoutonGraphique boutgraph = new BoutonGraphique(GrilleJeu.GrillePartie[i][j]);
                 panneau_grille.add(boutgraph);
             }
         }
