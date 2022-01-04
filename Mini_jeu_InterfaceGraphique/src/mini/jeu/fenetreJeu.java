@@ -14,8 +14,7 @@ public class fenetreJeu extends javax.swing.JFrame {
 
     String Joueur1;
     Grille GrilleJeu = new Grille();
-    
-    //Timer chrono = new Timer();
+    Timer chrono = new Timer();
 
     /**
      * Creates new form fenetreJeu
@@ -113,6 +112,8 @@ public class fenetreJeu extends javax.swing.JFrame {
         // affichage des 2 panneaux
         panneauinfopartie.setVisible(true);
         initialiserPartie();
+        panneau_grille.repaint(); // permet de redessiner la grille
+        btn_start.setEnabled(false); // permet de désactiver le bouton "start"
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
@@ -153,6 +154,8 @@ public class fenetreJeu extends javax.swing.JFrame {
 
 public void initialiserPartie(){
     String nomJoueur1 = nomJoueur.getText();
+    GrilleJeu.BoutonAleatoirementAllume();
+    labelTemps.set
 }
            
     
