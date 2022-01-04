@@ -114,6 +114,13 @@ public class fenetreJeu extends javax.swing.JFrame {
         initialiserPartie();
         panneau_grille.repaint(); // permet de redessiner la grille
         btn_start.setEnabled(false); // permet de désactiver le bouton "start"
+        labelTemps.setText("start"); // le chrono démare
+        
+        //labelTemps.addActionListener(new java.awt.event.ActionListener()) {
+        //public vo
+                
+             
+                
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
@@ -155,7 +162,8 @@ public class fenetreJeu extends javax.swing.JFrame {
 public void initialiserPartie(){
     String nomJoueur1 = nomJoueur.getText();
     GrilleJeu.BoutonAleatoirementAllume();
-    labelTemps.set
+    
+    //labelTemps.set
 }
            
     
