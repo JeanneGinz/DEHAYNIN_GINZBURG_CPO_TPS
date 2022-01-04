@@ -31,7 +31,7 @@ public class Grille {
         GrillePartie[nbColonne][nbLigne].couleurDuBouton("coronavirus");
         
         int piege; // creation de piege, la ou il ne faut pas appuyer
-        piege=random.nextInt(2);
+        piege=random.nextInt(3);
         if (piege == 1) {
         int x = random.nextInt(6); // meme methode que precedemment 
         int y = random.nextInt(6);
