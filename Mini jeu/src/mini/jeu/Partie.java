@@ -23,7 +23,7 @@ public class Partie {
         tour=0;
     }
     public void InitialiserPartie(){
-        Grille GrilleJeu = new Grille();
+         GrilleJeu = new Grille();
     }
     
     public void DebuterPartie() throws InterruptedException{
