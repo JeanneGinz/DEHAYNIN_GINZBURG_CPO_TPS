@@ -35,24 +35,33 @@ public class Partie {
        
         GrilleJeu.AfficherGrille();
         System.out.println("La partie va débuter");
-        //long t= System.currentTimeMillis();
-        //long end = t+30000;
-        while(tour < 4) { 
-            GrilleJeu.BoutonAleatoirementAllume();
-            GrilleJeu.AfficherGrille();
-            Scanner sc = new Scanner(System.in); 
-            System.out.println("saisissez la ligne entre 1 et 6");
+        
+        while(tour < 20) {  //on impose max 20 tour car pas de chrnometre sur la console
+            GrilleJeu.BoutonAleatoirementAllume();  // appel de la fonction d'allumer les boutons
+            GrilleJeu.AfficherGrille();  // on affiche notre grille avec les nouveaux boutons allumé
+            Scanner sc = new Scanner(System.in);  //le joueur va rentrer les coordonnés de la ou il veut jouer
+            System.out.println("saisissez la ligne entre 1 et 6"); // le ligne 1 se trouve en haut
             int a = sc.nextInt() -1;
             System.out.println("saisissez la colonne entre 1 et 6");
             int b = sc.nextInt() -1;
+            
+            if (a>6 || b>6 ) { 
+            System.out.println("Erreur, la ligne ou la colonne n'existe pas");
+            GrilleJeu.AfficherGrille();
+            System.out.println("Saisissez la ligne entre 1 et 6");
+             a = sc.nextInt() -1;
+            System.out.println("Saisissez la colonne entre 1 et 6");
+             b = sc.nextInt() -1;  
             GrilleJeu.CliquerPourEteindre(a,b);
+            }
             tour++;
         
   
-                //Thread.sleep(30000);
+                
         
     }
     
     
 }
 }
+
