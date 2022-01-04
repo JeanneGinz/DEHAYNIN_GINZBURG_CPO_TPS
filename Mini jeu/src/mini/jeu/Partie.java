@@ -36,7 +36,7 @@ public class Partie {
         
         System.out.println("La partie va débuter");
         
-        while(tour < 20) {  //on impose max 20 tour car pas de chrnometre sur la console
+        while(tour < 6) {  //on impose max 5 tour car pas de chrnometre sur la console
             GrilleJeu.BoutonAleatoirementAllume();  // appel de la fonction d'allumer les boutons
             GrilleJeu.AfficherGrille();  // on affiche notre grille avec les nouveaux boutons allumé
             Scanner sc = new Scanner(System.in);  //le joueur va rentrer les coordonnés de la ou il veut jouer
@@ -60,7 +60,7 @@ public class Partie {
                 
         
     }
-    
+    System.out.println("Votre score est de : "+tour);
     
 }
 }
