@@ -4,17 +4,38 @@
  */
 package mini.jeu;
 
+import java.util.Timer;
+
 /**
  *
  * @author jeann
  */
 public class fenetreJeu extends javax.swing.JFrame {
 
+    String Joueur1;
+    Grille GrilleJeu = new Grille();
+    
+    //Timer chrono = new Timer();
+
     /**
      * Creates new form fenetreJeu
      */
     public fenetreJeu() {
+        
         initComponents();
+        
+        panneau_creationpartie.setVisible(false); // on cache ces 2 panneaux avant 
+        // début de la partie
+        panneauinfopartie.setVisible(false);
+
+        for (int i = 4; i >= 0; i++) { // crée 36 cellules graphiques
+            for (int j = 0; j < 6; j++) {
+                BoutonGraphique boutgraph = new BoutonGraphique();
+                panneau_grille.add(boutgraph);
+            }
+        }
+        
+        
     }
 
     /**
@@ -88,7 +109,9 @@ public class fenetreJeu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
-        // TODO add your handling code here:
+        panneau_creationpartie.setVisible(true); // quand bouton est cliquer
+        // affichage des 2 panneaux
+        panneauinfopartie.setVisible(true);
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
