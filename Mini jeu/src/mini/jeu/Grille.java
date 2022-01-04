@@ -45,8 +45,8 @@ public class Grille {
     }
 
     int booster; // extactement pareil mais cette fois si avec un booster pour avoir des poins bonus
-    booster=random.nextInt(5);
-    if(booster==3){
+    booster=random.nextInt(4);
+    if(booster==2){
         int x = random.nextInt(6);
         int y = random.nextInt(6);
         while (GrillePartie[nbColonne][nbLigne] == GrillePartie[x][y]) { // on vérifie que notre booster ne soit pas sur notre covid
