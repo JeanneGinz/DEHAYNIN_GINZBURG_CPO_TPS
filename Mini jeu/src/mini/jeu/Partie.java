@@ -20,7 +20,7 @@ public class Partie {
     int tour=0;
     
     public Partie(){
-        tour=0; // création du constructeur, qui correspond au nombre de tour
+        tour=0; // création du constructeur, qui correspond au nombre de tour jouer
     }
     public void InitialiserPartie(){
          GrilleJeu = new Grille(); //on initiatise notre grilleJeu
