@@ -37,7 +37,7 @@ public class Partie {
         System.out.println("La partie va débuter");
         //long t= System.currentTimeMillis();
         //long end = t+30000;
-        while(tour < 4) {
+        while(tour < 4) { 
             GrilleJeu.BoutonAleatoirementAllume();
             GrilleJeu.AfficherGrille();
             Scanner sc = new Scanner(System.in); 
