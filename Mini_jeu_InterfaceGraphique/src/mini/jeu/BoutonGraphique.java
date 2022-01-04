@@ -28,7 +28,8 @@ public class BoutonGraphique extends JButton {
     @Override
     public void paintComponent (Graphics G){
         super.paintComponent(G);
-        if (boutonassociee.Couleur == "coronavirus"){ // va afficher dans la grille le symbole associé
+        if(boutonassociee.boutonAllume == true){ // on vérifie que la case soit allumé
+            if (boutonassociee.Couleur == "coronavirus"){ // va afficher dans la grille le symbole associé
             setIcon (img_corona); // ici on attribue l'image du corona 
         }
         if (boutonassociee.Couleur == "delta"){ // va afficher dans la grille le symbole associé
@@ -37,6 +38,7 @@ public class BoutonGraphique extends JButton {
         if (boutonassociee.Couleur == "masque"){ // va afficher dans la grille le symbole associé
             setIcon (img_masque); // ici on attribue l'image du masque 
         }
-        setIcon (img_vide); // on attribue l'image boutonvide
+        }
+        else {setIcon (img_vide);} // on attribue l'image boutonvide
     }
 }

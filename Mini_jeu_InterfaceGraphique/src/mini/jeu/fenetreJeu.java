@@ -14,8 +14,9 @@ public class fenetreJeu extends javax.swing.JFrame {
 
     String Joueur1;
     Grille GrilleJeu = new Grille();
-    
-    //Timer chrono = new Timer();
+    Timer chrono = new Timer();
+    boolean clique=false;
+    int tour=0;
 
     /**
      * Creates new form fenetreJeu
@@ -24,6 +25,7 @@ public class fenetreJeu extends javax.swing.JFrame {
         
         initComponents();
         
+        panneau_grille.setVisible(false); 
         panneau_creationpartie.setVisible(false); // on cache ces 2 panneaux avant 
         // début de la partie
         panneauinfopartie.setVisible(false);
@@ -32,11 +34,67 @@ public class fenetreJeu extends javax.swing.JFrame {
             for (int j = 0; j < 6; j++) {
                 BoutonGraphique boutgraph = new BoutonGraphique(GrilleJeu.GrillePartie[i][j]);
                 panneau_grille.add(boutgraph);
+                 boutgraph.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        Bouton b = boutgraph.boutonassociee;
+
+                        if (b.boutonAllume == false) {
+                            return;
+                        } 
+                        else if (b.Couleur.equals("coronavirus") )  {
+                            b.EteindreLeBouton();
+                            clique = true;
+                            tour++;
+                            label_nbrecoups.setText(tour + "");
+                            
+                            
+                            for (int i = 0; i < 7; i++) {
+                                for (int j = 0; j < 7; j++) {
+                                    if (GrilleJeu.GrillePartie[i][j].Couleur.equals("masque") || GrilleJeu.GrillePartie[i][j].Couleur.equals("delta") ) {
+                                        GrilleJeu.GrillePartie[i][j].EteindreLeBouton();
+                                    }
+                                }
+                            }
+                            
+                            jouer();
+                        }
+                        
+                        else if (b.Couleur.equals("masque") ) {
+                            b.EteindreLeBouton();
+                            tour--;
+                            label_nbrecoups.setText(tour + "");
+                                                       
+                            for (int i = 0; i < 7; i++) {
+                                for (int j = 0; j < 7; j++) {
+                                    if (GrilleJeu.GrillePartie[i][j].Couleur.equals("coronavirus") || GrilleJeu.GrillePartie[i][j].Couleur.equals("delta")) {
+                                        GrilleJeu.GrillePartie[i][j].EteindreLeBouton();
+                                    }
+                                }
+                            }
+                            jouer();
+                        }
+                        
+                        else if (b.Couleur.equals("delta") ) { 
+                            b.EteindreLeBouton();
+                            tour= tour + 2;
+                            label_nbrecoups.setText(tour + "");
+                            panneau_grille.repaint();
+                            for (int i = 0; i < 7; i++) {
+                                for (int j = 0; j < 7; j++) {
+                                    if (GrilleJeu.GrillePartie[i][j].Couleur.equals("coronavirus") || GrilleJeu.GrillePartie[i][j].Couleur.equals("masque")) {
+                                        GrilleJeu.GrillePartie[i][j].EteindreLeBouton();
+                                    }
+                                }
+                            }
+                            jouer();
+                        }
             }
-        }
+            
+        });
+                
         
         
-    }
+    }}}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -58,6 +116,8 @@ public class fenetreJeu extends javax.swing.JFrame {
         panneauinfopartie = new javax.swing.JPanel();
         labelTemps = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        cadre_bienvenue = new javax.swing.JPanel();
+        btn_bienv = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -87,9 +147,9 @@ public class fenetreJeu extends javax.swing.JFrame {
         panneau_creationpartie.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label_nbrecoups.setText("nbrcoups");
-        panneau_creationpartie.add(label_nbrecoups, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 130, 50));
+        panneau_creationpartie.add(label_nbrecoups, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 130, 50));
 
-        jLabel5.setText("Nombre de coups :");
+        jLabel5.setText("Score :");
         panneau_creationpartie.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 50));
 
         getContentPane().add(panneau_creationpartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 510, 260, 100));
@@ -105,6 +165,34 @@ public class fenetreJeu extends javax.swing.JFrame {
 
         getContentPane().add(panneauinfopartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 260, 180));
 
+        cadre_bienvenue.setBackground(new java.awt.Color(204, 204, 255));
+
+        btn_bienv.setText("Bienvenue");
+        btn_bienv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_bienvActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout cadre_bienvenueLayout = new javax.swing.GroupLayout(cadre_bienvenue);
+        cadre_bienvenue.setLayout(cadre_bienvenueLayout);
+        cadre_bienvenueLayout.setHorizontalGroup(
+            cadre_bienvenueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cadre_bienvenueLayout.createSequentialGroup()
+                .addGap(373, 373, 373)
+                .addComponent(btn_bienv, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(507, Short.MAX_VALUE))
+        );
+        cadre_bienvenueLayout.setVerticalGroup(
+            cadre_bienvenueLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cadre_bienvenueLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(btn_bienv)
+                .addContainerGap(596, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(cadre_bienvenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 980, 640));
+
         setBounds(0, 0, 997, 688);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -113,7 +201,21 @@ public class fenetreJeu extends javax.swing.JFrame {
         // affichage des 2 panneaux
         panneauinfopartie.setVisible(true);
         initialiserPartie();
+        panneau_grille.repaint(); // permet de redessiner la grille
+        btn_start.setEnabled(false); // permet de désactiver le bouton "start"
+        labelTemps.setText("start"); // le chrono démare
+        
+        //labelTemps.addActionListener(new java.awt.event.ActionListener()) {
+        //public vo
+                
+             
+                
     }//GEN-LAST:event_btn_startActionPerformed
+
+    private void btn_bienvActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_bienvActionPerformed
+        panneau_grille.setVisible(true);
+        btn_bienv.setVisible(false);
+    }//GEN-LAST:event_btn_bienvActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,11 +255,21 @@ public class fenetreJeu extends javax.swing.JFrame {
 
 public void initialiserPartie(){
     String nomJoueur1 = nomJoueur.getText();
+    GrilleJeu.BoutonAleatoirementAllume();
+    
+    //labelTemps.set
 }
-           
+
+
+  public void jouer() {
+        GrilleJeu.BoutonAleatoirementAllume();
+        panneau_grille.repaint();
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_bienv;
     private javax.swing.JButton btn_start;
+    private javax.swing.JPanel cadre_bienvenue;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
