@@ -26,76 +26,70 @@ public class fenetreJeu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        panneau_grille = new javax.swing.JPanel();
+        panneau_infojoueur = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        nomJoueur = new javax.swing.JTextField();
+        btn_start = new javax.swing.JButton();
+        panneau_creationpartie = new javax.swing.JPanel();
+        label_nbrecoups = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        panneauinfopartie = new javax.swing.JPanel();
+        labelTemps = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        panneau_grille.setBackground(new java.awt.Color(255, 255, 255));
+        panneau_grille.setLayout(new java.awt.GridLayout(6, 6));
+        getContentPane().add(panneau_grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 576, 576));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 420, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 490, Short.MAX_VALUE)
-        );
+        panneau_infojoueur.setBackground(new java.awt.Color(204, 255, 255));
+        panneau_infojoueur.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 420, 490));
+        jLabel1.setText("Nom joueur :");
+        panneau_infojoueur.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 140, 20));
+        panneau_infojoueur.add(nomJoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 130, 30));
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+        btn_start.setText("Let's go kick some corona");
+        btn_start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_startActionPerformed(evt);
+            }
+        });
+        panneau_infojoueur.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 170, 50));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        getContentPane().add(panneau_infojoueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, 260, 200));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 50, 400, -1));
+        panneau_creationpartie.setBackground(new java.awt.Color(204, 255, 255));
+        panneau_creationpartie.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
+        label_nbrecoups.setText("nbrcoups");
+        panneau_creationpartie.add(label_nbrecoups, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 130, 50));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 220, Short.MAX_VALUE)
-        );
+        jLabel5.setText("Nombre de coups :");
+        panneau_creationpartie.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 130, 50));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 170, -1, 220));
+        getContentPane().add(panneau_creationpartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 510, 260, 100));
 
-        jPanel4.setBackground(new java.awt.Color(204, 255, 255));
+        panneauinfopartie.setBackground(new java.awt.Color(204, 255, 255));
+        panneauinfopartie.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
+        labelTemps.setText("tps_restant");
+        panneauinfopartie.add(labelTemps, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 90, 50));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 420, -1, -1));
+        jLabel3.setText("Temps restatnt :");
+        panneauinfopartie.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 90, 50));
+
+        getContentPane().add(panneauinfopartie, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 300, 260, 180));
 
         setBounds(0, 0, 997, 688);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_startActionPerformed
 
     /**
      * @param args the command line arguments
@@ -133,9 +127,16 @@ public class fenetreJeu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JButton btn_start;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel labelTemps;
+    private javax.swing.JLabel label_nbrecoups;
+    private javax.swing.JTextField nomJoueur;
+    private javax.swing.JPanel panneau_creationpartie;
+    private javax.swing.JPanel panneau_grille;
+    private javax.swing.JPanel panneau_infojoueur;
+    private javax.swing.JPanel panneauinfopartie;
     // End of variables declaration//GEN-END:variables
 }
