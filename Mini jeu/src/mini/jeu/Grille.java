@@ -72,10 +72,10 @@ public class Grille {
         for (int i=0; i<6; i++) {
             for (int j=0; j<6; j++) {
                 if(GrillePartie[i][j].boutonAllume == false){
-                    System.out.print(" A "); // pour Allumé
+                    System.out.print(" E "); // pour eteint
                 }
                 else if (GrillePartie[i][j].boutonAllume == true) {
-                    System.out.print(" E "); //pour eteint
+                    System.out.print(" A "); //pour allumé
         }
     }
              System.out.println(); 
