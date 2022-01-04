@@ -112,6 +112,7 @@ public class fenetreJeu extends javax.swing.JFrame {
         panneau_creationpartie.setVisible(true); // quand bouton est cliquer
         // affichage des 2 panneaux
         panneauinfopartie.setVisible(true);
+        initialiserPartie();
     }//GEN-LAST:event_btn_startActionPerformed
 
     /**
@@ -149,6 +150,12 @@ public class fenetreJeu extends javax.swing.JFrame {
         });
     }
 
+
+public void initialiserPartie(){
+    String nomJoueur1 = nomJoueur.getText();
+}
+           
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_start;
     private javax.swing.JLabel jLabel1;
